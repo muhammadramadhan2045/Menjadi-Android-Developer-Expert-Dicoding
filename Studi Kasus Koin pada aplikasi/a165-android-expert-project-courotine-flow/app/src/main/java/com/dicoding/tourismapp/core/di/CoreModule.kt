@@ -17,7 +17,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-val databaseModule=module{
+val databaseModule= module{
     factory {
         get<TourismDatabase>().tourismDao()
     }
