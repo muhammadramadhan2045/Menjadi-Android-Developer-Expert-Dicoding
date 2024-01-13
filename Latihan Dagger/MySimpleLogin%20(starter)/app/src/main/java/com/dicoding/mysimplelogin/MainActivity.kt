@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val sesi = SessionManager(this)
-        userRepository = UserRepository.getInstance(sesi)
+//        val sesi = SessionManager(this)
+//        userRepository = UserRepository.getInstance(sesi)
 
         if (userRepository.isUserLogin()) {
             moveToHomeActivity()

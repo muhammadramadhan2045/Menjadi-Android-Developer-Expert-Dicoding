@@ -15,8 +15,8 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val sesi = SessionManager(this)
-        userRepository = UserRepository.getInstance(sesi)
+//        val sesi = SessionManager(this)
+//        userRepository = UserRepository.getInstance(sesi)
 
         binding.tvWelcome.text = "Welcome ${userRepository.getUser()}"
 
