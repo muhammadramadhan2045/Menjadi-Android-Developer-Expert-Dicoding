@@ -1,5 +1,7 @@
 package com.dicoding.tourismapp
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
@@ -12,7 +14,7 @@ import com.dicoding.tourismapp.favorite.FavoriteFragment
 import com.dicoding.tourismapp.home.HomeFragment
 import com.google.android.material.navigation.NavigationView
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class   MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -47,6 +49,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         var fragment: Fragment? = null
         var title = getString(R.string.app_name)
         when (item.itemId) {
+            R.id.nav_map->{
+                val uri= Uri.parse("tourismapp://maps")
+                startActivity(Intent(Intent.ACTION_VIEW, uri))
+            }
             R.id.nav_home -> {
                 fragment = HomeFragment()
                 title = getString(R.string.app_name)

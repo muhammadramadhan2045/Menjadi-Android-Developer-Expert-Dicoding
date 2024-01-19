@@ -38,6 +38,7 @@ android {
         viewBinding = true
     }
     namespace 'com.dicoding.tourismapp'
+    dynamicFeatures = [':maps']
 }
 
 dependencies {
