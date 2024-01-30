@@ -1,0 +1,71 @@
+package com.example.premierleagueapp.core.data
+
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.map
+import com.example.premierleagueapp.core.data.source.local.LocalDataSource
+import com.example.premierleagueapp.core.data.source.remote.RemoteDataSource
+import com.example.premierleagueapp.core.data.source.remote.network.ApiResponse
+import com.example.premierleagueapp.core.data.source.remote.response.TeamResponse
+import com.example.premierleagueapp.core.domain.model.Team
+import com.example.premierleagueapp.core.domain.repository.ITeamRepository
+import com.example.premierleagueapp.core.utils.AppExecutors
+import com.example.premierleagueapp.core.utils.DataMapper
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
+
+class TeamRepository private constructor(
+    private val remoteDataSource: RemoteDataSource,
+    private val localDataSource: LocalDataSource,
+    private val appExecutors: AppExecutors
+) : ITeamRepository {
+
+    companion object {
+        @Volatile
+        private var instance: TeamRepository? = null
+
+        fun getInstance(
+            remoteData: RemoteDataSource,
+            localData: LocalDataSource,
+            appExecutors: AppExecutors
+        ): TeamRepository =
+            instance ?: synchronized(this) {
+                instance ?: TeamRepository(remoteData, localData, appExecutors)
+            }
+
+    }
+
+    override fun getAllTeam(): Flow<Resource<List<Team>>> =
+        object : NetworkBoundResource<List<Team>, List<TeamResponse>>(appExecutors) {
+            override fun loadFromDB(): Flow<List<Team>> {
+                return localDataSource.getAllTeam().map {
+                    DataMapper.mapEntitiesToDomain(it)
+                }
+            }
+
+            override suspend fun createCall(): Flow<ApiResponse<List<TeamResponse>>> =
+                remoteDataSource.getAllTeam()
+
+            override suspend fun saveCallResult(data: List<TeamResponse>) {
+                val teamList = DataMapper.mapResponseToEntities(data)
+                localDataSource.insertTeam(teamList)
+            }
+
+            override fun shouldFetch(data: List<Team>?): Boolean =
+                data == null || data.isEmpty()
+
+        }.asFlow()
+
+
+    override fun getAllFavoriteTeam():Flow<List<Team>> {
+        return localDataSource.getFavoriteTeam().map {
+            DataMapper.mapEntitiesToDomain(it)
+        }
+    }
+
+    override fun setFavoriteTeam(team: Team, state: Boolean) {
+        val teamEntity = DataMapper.mapDomainToEntity(team)
+        appExecutors.diskIO().execute { localDataSource.setFavoriteTeam(teamEntity, state) }
+    }
+
+
+}
