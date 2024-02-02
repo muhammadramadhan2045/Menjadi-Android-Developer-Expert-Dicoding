@@ -11,14 +11,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.premierleagueapp.R
 import com.example.premierleagueapp.core.data.Resource
 import com.example.premierleagueapp.core.ui.TeamAdapter
-import com.example.premierleagueapp.core.ui.ViewModelFactory
 import com.example.premierleagueapp.databinding.FragmentHomeBinding
 import com.example.premierleagueapp.detail.DetailTeamActivity
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class HomeFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private val homeViewModel: HomeViewModel by viewModel()
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -43,9 +43,6 @@ class HomeFragment : Fragment() {
                 intent.putExtra(DetailTeamActivity.EXTRA_DATA, selectedData)
                 startActivity(intent)
             }
-
-            val factory = ViewModelFactory.getInstance(requireActivity())
-            homeViewModel = ViewModelProvider(this, factory)[HomeViewModel::class.java]
 
             homeViewModel.team.observe(viewLifecycleOwner) { team ->
                 if (team != null) {

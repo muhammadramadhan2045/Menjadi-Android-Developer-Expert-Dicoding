@@ -10,21 +10,4 @@ import com.example.premierleagueapp.core.data.source.local.entity.TeamEntity
 abstract class TeamDatabase  : RoomDatabase(){
     abstract fun teamDao(): TeamDao
 
-    companion object{
-        @Volatile
-        private var INSTANCE: TeamDatabase? = null
-
-        fun getInstance(context: Context): TeamDatabase=
-            INSTANCE?: synchronized(this){
-                val instance = Room.databaseBuilder(
-                    context.applicationContext,
-                    TeamDatabase::class.java,
-                    "Team.db"
-                )
-                    .fallbackToDestructiveMigration()
-                    .build()
-                INSTANCE = instance
-                instance
-            }
-    }
 }

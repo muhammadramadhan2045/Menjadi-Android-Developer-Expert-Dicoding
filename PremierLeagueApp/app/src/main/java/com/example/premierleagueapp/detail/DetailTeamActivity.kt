@@ -6,15 +6,15 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.premierleagueapp.R
 import com.example.premierleagueapp.core.domain.model.Team
-import com.example.premierleagueapp.core.ui.ViewModelFactory
 import com.example.premierleagueapp.databinding.ActivityDetailTeamBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailTeamActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_DATA = "extra_data"
     }
 
-    private lateinit var detailViewModel: DetailViewModel
+    private  val detailViewModel: DetailViewModel by viewModel()
     private var binding: ActivityDetailTeamBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,10 +23,6 @@ class DetailTeamActivity : AppCompatActivity() {
         setContentView(binding?.root)
 
         setSupportActionBar(binding?.toolbar)
-
-        val factory = ViewModelFactory.getInstance(this)
-        detailViewModel =ViewModelProvider(this, factory)[DetailViewModel::class.java]
-
 
         val detailTeam= intent.getParcelableExtra<Team>(EXTRA_DATA)
         showDetailTeam(detailTeam)

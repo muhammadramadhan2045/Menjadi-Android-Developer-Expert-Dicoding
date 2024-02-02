@@ -5,16 +5,7 @@ import com.example.premierleagueapp.core.data.source.local.entity.TeamEntity
 import com.example.premierleagueapp.core.data.source.local.room.TeamDao
 import kotlinx.coroutines.flow.Flow
 
-class LocalDataSource private constructor(private val teamDao: TeamDao){
-
-    companion object{
-        private var instance: LocalDataSource? = null
-
-        fun getInstance(teamDao: TeamDao): LocalDataSource =
-            instance ?: synchronized(this){
-                instance ?: LocalDataSource(teamDao)
-            }
-    }
+class LocalDataSource(private val teamDao: TeamDao){
 
 
     fun getAllTeam(): Flow<List<TeamEntity>> =teamDao.getAllTeam()

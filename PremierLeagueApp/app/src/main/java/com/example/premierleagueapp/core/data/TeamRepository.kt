@@ -13,26 +13,11 @@ import com.example.premierleagueapp.core.utils.DataMapper
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class TeamRepository private constructor(
+class TeamRepository(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
     private val appExecutors: AppExecutors
 ) : ITeamRepository {
-
-    companion object {
-        @Volatile
-        private var instance: TeamRepository? = null
-
-        fun getInstance(
-            remoteData: RemoteDataSource,
-            localData: LocalDataSource,
-            appExecutors: AppExecutors
-        ): TeamRepository =
-            instance ?: synchronized(this) {
-                instance ?: TeamRepository(remoteData, localData, appExecutors)
-            }
-
-    }
 
     override fun getAllTeam(): Flow<Resource<List<Team>>> =
         object : NetworkBoundResource<List<Team>, List<TeamResponse>>(appExecutors) {

@@ -15,22 +15,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RemoteDataSource private constructor(private val apiService: ApiService) {
-
-    companion object {
-        @Volatile
-        private var instance: RemoteDataSource? = null
-
-        fun getInstance(service: ApiService): RemoteDataSource =
-            instance ?: synchronized(this) {
-                instance ?: RemoteDataSource(service)
-            }
-    }
+class RemoteDataSource(private val apiService: ApiService) {
 
 
     suspend fun getAllTeam(): Flow<ApiResponse<List<TeamResponse>>> {
-        val resultData = MutableLiveData<ApiResponse<List<TeamResponse>>>()
-
         //get data from remote api
         return flow {
             try {
