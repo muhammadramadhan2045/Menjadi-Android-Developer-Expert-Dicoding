@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Premier League App"
 include(":app")
+include(":core")

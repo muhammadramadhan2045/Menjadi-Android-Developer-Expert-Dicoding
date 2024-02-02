@@ -52,7 +52,7 @@ val networkModule = module {
 
 val repositoryModule = module{
     single {
-        LocalDataSource(get())
+        com.example.premierleagueapp.core.data.source.local.LocalDataSource(get())
     }
     single {
         RemoteDataSource(get())
@@ -61,6 +61,6 @@ val repositoryModule = module{
         AppExecutors()
     }
     single<ITeamRepository> {
-        TeamRepository(get(), get(), get())
+        com.example.premierleagueapp.core.data.TeamRepository(get(), get(), get())
     }
 }

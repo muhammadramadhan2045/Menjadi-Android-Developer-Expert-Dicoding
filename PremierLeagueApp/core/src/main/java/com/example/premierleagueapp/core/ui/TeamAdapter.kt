@@ -5,9 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.premierleagueapp.R
+import com.example.premierleagueapp.core.R
 import com.example.premierleagueapp.core.domain.model.Team
-import com.example.premierleagueapp.databinding.ItemListTeamBinding
+import com.example.premierleagueapp.core.databinding.ItemListTeamBinding
 
 class TeamAdapter : RecyclerView.Adapter<TeamAdapter.ListViewHolder>() {
 

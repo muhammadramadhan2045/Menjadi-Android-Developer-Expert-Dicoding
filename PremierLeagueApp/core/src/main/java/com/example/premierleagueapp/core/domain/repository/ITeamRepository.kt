@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface ITeamRepository {
 
-    fun getAllTeam(): Flow<Resource<List<Team>>>
+    fun getAllTeam(): Flow<com.example.premierleagueapp.core.data.Resource<List<Team>>>
 
     fun getAllFavoriteTeam(): Flow<List<Team>>
 
