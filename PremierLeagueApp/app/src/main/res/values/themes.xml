@@ -1,9 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.PremierLeagueApp" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.PremierLeagueApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
     <style name="Theme.PremierLeagueApp" parent="Base.Theme.PremierLeagueApp" />
+
+    <style name="Theme.PremierLeagueApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.PremierLeagueApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
