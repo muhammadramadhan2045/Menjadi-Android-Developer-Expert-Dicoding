@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application")
+    id("com.android.dynamic-feature")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
     id("kotlin-parcelize")
@@ -8,16 +8,11 @@ apply{
     from("../shared_dependencies.gradle")
 }
 android {
-    namespace = "com.example.premierleagueapp"
+    namespace = "com.example.premierleagueapp.favorite"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.premierleagueapp"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -37,17 +32,15 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-
     buildFeatures {
         viewBinding = true
     }
-    dynamicFeatures += setOf(":favorite")
 }
 
 dependencies {
     // Dependency on a local library module
+    implementation(project(":app"))
     implementation(project(":core"))
-    // Dependency on local binaries
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 }
