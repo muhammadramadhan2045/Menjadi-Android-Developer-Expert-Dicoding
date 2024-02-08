@@ -47,8 +47,8 @@ class HomeFragment : Fragment() {
             homeViewModel.team.observe(viewLifecycleOwner) { team ->
                 if (team != null) {
                     when (team) {
-                        is com.example.premierleagueapp.core.data.Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
-                        is com.example.premierleagueapp.core.data.Resource.Success -> {
+                        is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
+                        is Resource.Success -> {
                             binding.progressBar.visibility = View.GONE
                             teamAdapter.setData(team.data)
                         }

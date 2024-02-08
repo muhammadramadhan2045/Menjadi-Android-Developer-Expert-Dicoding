@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.premierleagueapp.core.di.databaseModule
 import com.example.premierleagueapp.core.di.networkModule
 import com.example.premierleagueapp.core.di.repositoryModule
+import com.example.premierleagueapp.di.prefModule
 import com.example.premierleagueapp.di.useCaseModule
 import com.example.premierleagueapp.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
@@ -24,7 +25,8 @@ class MyApplication : Application() {
                     networkModule,
                     repositoryModule,
                     useCaseModule,
-                    viewModelModule
+                    viewModelModule,
+                    prefModule
                 )
             )
         }

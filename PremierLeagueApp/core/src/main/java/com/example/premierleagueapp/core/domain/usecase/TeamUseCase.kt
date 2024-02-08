@@ -5,7 +5,7 @@ import com.example.premierleagueapp.core.domain.model.Team
 import kotlinx.coroutines.flow.Flow
 
 interface TeamUseCase {
-    fun getAllTeam():Flow<com.example.premierleagueapp.core.data.Resource<List<Team>>>
+    fun getAllTeam():Flow<Resource<List<Team>>>
     fun getAllFavoriteTeam():Flow<List<Team>>
     fun setFavoriteTeam(team: Team, state: Boolean)
 }
