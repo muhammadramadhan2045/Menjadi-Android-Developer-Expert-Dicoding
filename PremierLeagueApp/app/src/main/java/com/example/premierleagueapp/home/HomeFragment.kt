@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.premierleagueapp.R
 import com.example.premierleagueapp.core.data.Resource
@@ -64,7 +65,7 @@ class HomeFragment : Fragment() {
             }
 
             with(binding.rvTeam) {
-                layoutManager = LinearLayoutManager(context)
+                layoutManager =LinearLayoutManager(context)
                 setHasFixedSize(true)
                 adapter = teamAdapter
             }

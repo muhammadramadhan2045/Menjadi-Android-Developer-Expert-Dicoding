@@ -46,6 +46,9 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     testImplementation("junit:junit:4.13.2")
 
+    //splash screen
+    implementation("androidx.core:core-splashscreen:1.0.0")
+
 
     //add mockito for testing
     testImplementation ("org.mockito:mockito-core:4.4.0")

@@ -8,9 +8,7 @@ import com.example.premierleagueapp.core.data.source.remote.RemoteDataSource
 import com.example.premierleagueapp.core.data.source.remote.network.ApiService
 import com.example.premierleagueapp.core.domain.repository.ITeamRepository
 import com.example.premierleagueapp.core.utils.AppExecutors
-import okhttp3.OkHttp
 import okhttp3.OkHttpClient
-import okhttp3.internal.platform.android.BouncyCastleSocketAdapter.Companion.factory
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
@@ -18,7 +16,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-val databaseModule= module{
+val databaseModule= module {
     factory {
         get<TeamDatabase>().teamDao()
     }
@@ -28,6 +26,7 @@ val databaseModule= module{
             TeamDatabase::class.java, "Team.db"
         ).fallbackToDestructiveMigration().build()
     }
+
 }
 
 val networkModule = module {

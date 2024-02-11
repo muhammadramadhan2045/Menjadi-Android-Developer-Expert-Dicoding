@@ -39,21 +39,22 @@ data class TeamResponse(
     @field:SerializedName("strDescriptionEN")
     val strDescriptionEN: String,
 
-
     @field:SerializedName("strTeamBadge")
     val strTeamBadge: String,
 
     @field:SerializedName("intFormedYear")
     val intFormedYear: String,
 
+    @field:SerializedName("strTeamFanart1")
+    val strTeamFanart1: String,
 
-    @field:SerializedName("strKitColour1")
-    val strKitColour1: String,
+    @field:SerializedName("strTeamFanart2")
+    val strTeamFanart2: String,
 
-    @field:SerializedName("strKitColour2")
-    val strKitColour2: String,
+    @field:SerializedName("strTeamFanart3")
+    val strTeamFanart3: String,
 
-    @field:SerializedName("strKitColour3")
-    val strKitColour3: String,
+    @field:SerializedName("strTeamFanart4")
+    val strTeamFanart4: String,
 
     )

@@ -23,9 +23,10 @@ object DataMapper {
                 strTeamShort = it.strTeamShort,
                 strAlternate = it.strAlternate,
                 strKeywords = it.strKeywords,
-                strKitColour1 = it.strKitColour1,
-                strKitColour2 = it.strKitColour2,
-                strKitColour3 = it.strKitColour3,
+                strTeamFanart1 = it.strTeamFanart1,
+                strTeamFanart2 = it.strTeamFanart2,
+                strTeamFanart3 = it.strTeamFanart3,
+                strTeamFanart4 = it.strTeamFanart4,
                 isFavorite = false,
             )
             teamList.add(team)
@@ -50,9 +51,10 @@ object DataMapper {
                 strTeamShort = it.strTeamShort,
                 strAlternate = it.strAlternate,
                 strKeywords = it.strKeywords,
-                strKitColour1 = it.strKitColour1,
-                strKitColour2 = it.strKitColour2,
-                strKitColour3 = it.strKitColour3,
+                strTeamFanart1 = it.strTeamFanart1,
+                strTeamFanart2 = it.strTeamFanart2,
+                strTeamFanart3 = it.strTeamFanart3,
+                strTeamFanart4 = it.strTeamFanart4,
                 isFavorite = it.isFavorite,
             )
         }
@@ -73,9 +75,10 @@ object DataMapper {
         strTeamShort = input.strTeamShort,
         strAlternate = input.strAlternate,
         strKeywords = input.strKeywords,
-        strKitColour1 = input.strKitColour1,
-        strKitColour2 = input.strKitColour2,
-        strKitColour3 = input.strKitColour3,
+        strTeamFanart1 = input.strTeamFanart1,
+        strTeamFanart2 = input.strTeamFanart2,
+        strTeamFanart3 = input.strTeamFanart3,
+        strTeamFanart4 = input.strTeamFanart4,
         isFavorite = input.isFavorite,
     )
 }

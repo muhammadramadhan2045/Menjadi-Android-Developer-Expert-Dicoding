@@ -22,7 +22,7 @@ class RemoteDataSource(private val apiService: ApiService) {
         //get data from remote api
         return flow {
             try {
-                val response = apiService.getListTeam()
+                val response = apiService.getListTeam("English Premier League")
                 val dataArray = response.teams
                 if (dataArray.isNotEmpty()) {
                     emit(ApiResponse.Success(response.teams))
@@ -35,5 +35,7 @@ class RemoteDataSource(private val apiService: ApiService) {
             }
         }.flowOn(Dispatchers.IO)
     }
+
+
 
 }

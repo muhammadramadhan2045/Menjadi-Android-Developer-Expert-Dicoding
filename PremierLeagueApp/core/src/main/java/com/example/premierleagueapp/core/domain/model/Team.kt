@@ -19,8 +19,9 @@ data class Team(
     val strDescriptionEN: String,
     val strTeamBadge: String,
     val intFormedYear: String,
-    val strKitColour1: String,
-    val strKitColour2: String,
-    val strKitColour3: String,
+    val strTeamFanart1: String,
+    val strTeamFanart2: String,
+    val strTeamFanart3: String,
+    val strTeamFanart4: String,
     var isFavorite: Boolean
 ): Parcelable

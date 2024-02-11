@@ -52,17 +52,21 @@ data class TeamEntity(
     @ColumnInfo(name = "strKeywords")
     var strKeywords: String,
 
-    @ColumnInfo(name = "strKitColour1")
-    var strKitColour1: String,
+    @ColumnInfo(name = "strTeamFanart1")
+    var strTeamFanart1: String,
 
-    @ColumnInfo(name = "strKitColour2")
-    var strKitColour2: String,
+    @ColumnInfo(name = "strTeamFanart2")
+    var strTeamFanart2: String,
 
-    @ColumnInfo(name = "strKitColour3")
-    var strKitColour3: String,
+    @ColumnInfo(name = "strTeamFanart3")
+    var strTeamFanart3: String,
+
+    @ColumnInfo(name = "strTeamFanart4")
+    var strTeamFanart4: String,
 
     @ColumnInfo(name = "isFavorite")
     var isFavorite: Boolean = false
+
 
 
 )

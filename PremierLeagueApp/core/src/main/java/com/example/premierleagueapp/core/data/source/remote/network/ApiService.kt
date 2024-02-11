@@ -6,6 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ApiService {
-    @GET("search_all_teams.php?l=English_Premier_League")
-     suspend fun getListTeam(): ListTeamResponse
+    @GET("search_all_teams.php")
+    suspend fun getListTeam(@Query("l") league: String): ListTeamResponse
+
 }

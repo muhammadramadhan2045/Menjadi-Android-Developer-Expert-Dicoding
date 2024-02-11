@@ -9,7 +9,7 @@ import com.example.premierleagueapp.core.R
 import com.example.premierleagueapp.core.domain.model.Team
 import com.example.premierleagueapp.core.databinding.ItemListTeamBinding
 
-class TeamAdapter : RecyclerView.Adapter<TeamAdapter.ListViewHolder>() {
+class   TeamAdapter : RecyclerView.Adapter<TeamAdapter.ListViewHolder>() {
 
 
     private var listData= ArrayList<Team>()
@@ -41,7 +41,7 @@ class TeamAdapter : RecyclerView.Adapter<TeamAdapter.ListViewHolder>() {
                     .load(data.strTeamBadge)
                     .into(ivItemImage)
                 tvItemTitle.text=data.strTeam
-                tvItemSubtitle.text=data.strStadium
+                tvItemSubtitle.text="Est. ${data.intFormedYear}"
             }
         }
 

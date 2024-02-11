@@ -1,11 +1,10 @@
 package com.example.premierleagueapp.core.data.source.local
 
-import androidx.lifecycle.LiveData
 import com.example.premierleagueapp.core.data.source.local.entity.TeamEntity
 import com.example.premierleagueapp.core.data.source.local.room.TeamDao
 import kotlinx.coroutines.flow.Flow
 
-class LocalDataSource(private val teamDao: TeamDao){
+class LocalDataSource(private val teamDao: TeamDao) {
 
 
     fun getAllTeam(): Flow<List<TeamEntity>> =teamDao.getAllTeam()
@@ -18,4 +17,5 @@ class LocalDataSource(private val teamDao: TeamDao){
         team.isFavorite = newState
         teamDao.updateFavoriteTeam(team)
     }
+
 }
