@@ -48,7 +48,7 @@ class DetailTeamActivity : AppCompatActivity() {
         detailTeam?.let {
             supportActionBar?.title = detailTeam.strTeam
             Glide.with(this@DetailTeamActivity)
-                .load(detailTeam.strStadiumThumb)
+                .load(detailTeam.strTeamBadge)
                 .into(binding?.ivDetailImage!!)
 
             var statusFavorite = detailTeam.isFavorite
