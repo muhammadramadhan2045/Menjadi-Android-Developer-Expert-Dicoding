@@ -12,7 +12,8 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.example.premierleagueapp.MainActivity">
+        <activity android:name="com.example.premierleagueapp.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>

@@ -45,7 +45,7 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     //live data
-    api("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
+    api("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
 
     //retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
@@ -53,12 +53,12 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
 
     //room
-    implementation("androidx.room:room-ktx:2.5.2")
-    implementation("androidx.room:room-runtime:2.5.2")
-    ksp("androidx.room:room-compiler:2.5.2")
+    implementation("androidx.room:room-ktx:2.6.1")
+    implementation("androidx.room:room-runtime:2.6.1")
+    ksp("androidx.room:room-compiler:2.6.1")
 
 
     //coroutines flow
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 }

@@ -41,7 +41,7 @@ class   TeamAdapter : RecyclerView.Adapter<TeamAdapter.ListViewHolder>() {
                     .load(data.strTeamBadge)
                     .into(ivItemImage)
                 tvItemTitle.text=data.strTeam
-                tvItemSubtitle.text="Est. ${data.intFormedYear}"
+                tvItemSubtitle.text= StringBuilder().append("Est. ").append(data.intFormedYear)
             }
         }
 

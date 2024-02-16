@@ -38,35 +38,32 @@ class AboutTeamFragment : Fragment() {
 
         val detailTeam = activity?.intent?.getParcelableExtra<Team>(EXTRA_DATA)
 
-        val imageUrl= listOf(
-            detailTeam!!.strTeamFanart1,
-            detailTeam.strTeamFanart2,
-            detailTeam.strTeamFanart3,
-            detailTeam.strTeamFanart4,
-            detailTeam.strStadiumThumb
+        detailTeam?.let { team ->
+            val imageUrl = listOfNotNull(
+                team.strTeamFanart1,
+                team.strTeamFanart2,
+                team.strTeamFanart3,
+                team.strTeamFanart4,
+                team.strStadiumThumb
+            )
 
-        )
+            val adapter = ImageAdapter(imageUrl)
 
-        val adapter = ImageAdapter(imageUrl)
+            binding.apply {
+                tvStadiumDesc.text = team.strDescriptionEN
+                tvStadium.text = team.strStadium
+                tvStadiumLocation.text = team.strStadiumLocation
+                tvStadiumCapacity.text = team.intStadiumCapacity
+                tvLeagueName.text = team.strLeague
+                tvEstablished.text = team.intFormedYear
+            }
 
-        binding.apply {
-            tvStadiumDesc.text = detailTeam.strDescriptionEN
-            tvStadium.text = detailTeam.strStadium
-            tvStadiumLocation.text = detailTeam.strStadiumLocation
-            tvStadiumCapacity.text = detailTeam.intStadiumCapacity
-            tvLeagueName.text = detailTeam.strLeague
-            tvEstablished.text = detailTeam.intFormedYear
-
-        }
-
-        binding.rvImage.apply {
-            layoutManager= LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            setHasFixedSize(true)
-            this.adapter = adapter
-            adapter.notifyDataSetChanged()
-
+            binding.rvImage.apply {
+                layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                setHasFixedSize(true)
+                this.adapter = adapter
+            }
         }
     }
-
 
 }

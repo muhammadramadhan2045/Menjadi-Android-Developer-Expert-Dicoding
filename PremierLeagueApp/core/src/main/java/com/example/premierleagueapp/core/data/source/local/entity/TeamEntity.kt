@@ -9,7 +9,6 @@ import com.google.gson.annotations.SerializedName
 @Entity(tableName = "team")
 data class TeamEntity(
     @PrimaryKey
-    @NonNull
     @ColumnInfo(name = "idTeam")
     var idTeam: String,
 
