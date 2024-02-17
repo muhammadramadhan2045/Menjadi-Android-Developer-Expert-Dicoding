@@ -52,7 +52,7 @@ class SessionManager(context: Context) {
         editor.clear()
         editor.commit()
     }
-
+    
     val isLogin: Boolean = pref.getBoolean(KEY_LOGIN, false)
 
     fun saveToPreference(key: String, value: String) = editor.putString(key, value).commit()
