@@ -13,6 +13,7 @@
         android:theme="@style/Theme.TourismApp">
 
         <activity
+            android:exported="true"
             android:name=".MainActivity"
             android:theme="@style/Theme.TourismApp.NoActionBar">
             <intent-filter>
@@ -23,6 +24,7 @@
         </activity>
 
         <activity
+            android:exported="false"
             android:name=".detail.DetailTourismActivity"
             android:label="@string/title_activity_detail_home"
             android:theme="@style/Theme.TourismApp.NoActionBar" />
