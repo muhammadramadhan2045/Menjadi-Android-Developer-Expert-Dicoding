@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "678708957071",
+    "project_id": "my-report-app-f7ee6",
+    "storage_bucket": "my-report-app-f7ee6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678708957071:android:1d1d8033b383b9bfff85fa",
+        "android_client_info": {
+          "package_name": "com.example.myreportapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQ7oZQ-uEwK9XJNKQDGY5JhwQLkCK3BVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
