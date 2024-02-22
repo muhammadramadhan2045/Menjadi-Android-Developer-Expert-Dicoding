@@ -42,7 +42,7 @@ class FavoriteFragment : Fragment() {
 
             favoriteViewModel.favoriteTeam.observe(viewLifecycleOwner) { dataTeam ->
                 teamAdapter.setData(dataTeam)
-                binding.viewEmpty.visibility = if (dataTeam.isNotEmpty()) View.GONE else View.VISIBLE
+                binding.viewEmpty.root.visibility = if (dataTeam.isNotEmpty()) View.GONE else View.VISIBLE
             }
 
             with(binding.rvTeam) {
